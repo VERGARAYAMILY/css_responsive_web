@@ -1,0 +1,57 @@
+.grilla {
+    display: grid;
+    grid-template: (5px auto auto auto auto auto 5px);/repeat(12, minmax(100px, 1fr));
+    grid-template-areas:
+        "h h h h h h h h h h h h"
+        "s s c c c c c c c c p p"
+        "s s c c c c c c c c p p"
+        "s s c c c c c c c c p p"
+        "s s c c c c c c c c p p"
+        "s s c c c c c c c c p p"
+        "f f f f f f f f f f f f";
+}
+
+.grilla>div {
+    border: 3px solid blue;
+    padding: 20px;
+    text-align: center;
+    height: max-content;
+}
+
+.header {
+    grid-area: h;
+    height: 100px;
+}
+
+.sidebar {
+    grid-area: s;
+}
+
+.content {
+    grid-area: c;
+}
+
+.footer {
+    grid-area: f;
+}
+
+.chat {
+    grid-area: p;
+}
+
+body {
+    border: 3px solid blue;
+
+}
+
+@media only screen and (max-width: 1000px) {
+    .grilla {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, minmax(10px, 1fr));
+      grid-template-areas:
+        "h"
+        "s"
+        "c"
+        "p"
+        "f";
+    }
